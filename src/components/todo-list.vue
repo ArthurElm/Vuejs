@@ -6,7 +6,7 @@
 
                 <input type="checkbox" name="done" id="checkbox" v-model="checked" :key="todo">
                 <label :key="todo">{{todo.todoName}}</label>
-                <input type="button" name="delete" id="delete">
+                <input type="button" name="delete" id="delete" @click="deletEvent(event)">
 
             </li>
                
@@ -22,14 +22,16 @@ export default {
     name: 'TodoList',
 
     props:{
-        todotab : {
+        todotab:{
             type: Array
         }
        
-    }
-
-    
-    
+    },
+methods: {
+    deletEvent(){
+ this.$emit('deleteTodo', this.titleTodo)
+      }
+}
 }
 </script>
 

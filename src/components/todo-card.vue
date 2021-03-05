@@ -9,7 +9,7 @@
         
         <new-todo @sendTodo="addTodo"/>
 
-        <todo-list :todotab="todotab"/>
+        <todo-list :todotab="todotab" @deleteTodo="deleteEvent"/>
         </section>
     </div>
 </template>
@@ -46,6 +46,9 @@ export default {
         }
        this.todotab.push(todo);
        //console.log(todotab);
+    },
+    deleteEvent: function(event) {
+  this.todotab.splice(this.todotab.indexOf(event), 1);
     }
     }
 }

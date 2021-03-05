@@ -47,8 +47,12 @@ export default {
        this.todotab.push(todo);
        //console.log(todotab);
     },
-    deleteEvent: function(event) {
-  this.todotab.splice(this.todotab.indexOf(event), 1);
+    deleteEvent(check){
+        const test = this.todotab.indexOf(check);
+        this.todotab.splice(test, 1);
+    },
+    doneEvent: function(check) {
+  this.todotab.splice(this.todotab.indexOf(check), 1);
     }
     }
 }

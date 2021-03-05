@@ -4,9 +4,9 @@
 
             <li class="todo" v-for="todo in todotab" :key="todo">
 
-                <input type="checkbox" name="done" id="checkbox" v-model="checked" :key="todo">
+                <input type="checkbox" name="done" id="checkbox" v-model="checked" :key="todo" @click="doneEvent">
                 <label :key="todo">{{todo.todoName}}</label>
-                <input type="button" name="delete" id="delete" @click="deletEvent(event)">
+                <input type="button" name="delete" id="delete" :key="todo" @click="deletEvent(todo)">
 
             </li>
                
@@ -28,8 +28,8 @@ export default {
        
     },
 methods: {
-    deletEvent(){
- this.$emit('deleteTodo', this.titleTodo)
+    deletEvent(check){
+ this.$emit('deleteTodo', check)
       }
 }
 }

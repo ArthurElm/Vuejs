@@ -25,7 +25,7 @@ export default {
         NewTodo() {
 
             if(this.titleTodo != "") {
-                this.$emit('sendTodo', this.titleTodo), console.log(this.titleTodo);
+                this.$emit('sendTodo', this.titleTodo), 
                 this.titleTodo = ""
             }
         }

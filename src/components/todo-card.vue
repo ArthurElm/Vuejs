@@ -4,7 +4,7 @@
         <ul>
             <li>{{moment().format('dddd') + " " + moment().format('LL')}}</li>
             <li>{{title}}</li>
-            <li>{{tasks}} tâches</li>
+            <li :key="todo">{{todotab.length}} tâches</li>
         </ul>
         
         <new-todo @sendTodo="addTodo"/>
@@ -21,7 +21,7 @@ import newTodo from './new-todo.vue'
 import moment from 'moment'
 import TodoList from './todo-list.vue';
 
-let todotab = [];
+
 
 export default {
   components: { newTodo, TodoList },
@@ -33,7 +33,7 @@ export default {
     data() {
         return {
             title : "VueJs Tutorial ToDo List",
-            tasks : 5,
+            todotab:[],
 
         }
     },
@@ -44,7 +44,8 @@ export default {
             todoName : a,
             checked : false
         }
-       todotab.push(todo);
+       this.todotab.push(todo);
+       //console.log(todotab);
     }
     }
 }

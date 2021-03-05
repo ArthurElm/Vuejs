@@ -1,10 +1,9 @@
-
 <template>
   <div id="app">
      <section class="hero is-warning is-bold is-fullheight">
       <div class="hero-body">
         <div class="container has-text-centered">
-          <h1 class="title">{{msg}}</h1>
+         <todo-card />
         </div>
       </div>
 
@@ -16,7 +15,7 @@
             </p>
             <p>
               Découvrez comment styliser simplement votre ToDo list avec 
-              <a class="has-text-primary" href="https://bulma.io/">
+              <a class="has-text-primary" href="https://bulma.io/%22%3E">
                 <strong>Bulma</strong>
               </a> 
             </p>
@@ -28,7 +27,11 @@
 </template>
 
 <script>
+import todoCard from './components/todo-card.vue'
+
+
 export default {
+  components: { todoCard },
   name: 'app',
   data () {
     return {
